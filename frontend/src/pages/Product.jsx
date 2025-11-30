@@ -9,7 +9,7 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Use environment variable from Vercel
+        // Use environment variable from Vercel or fallback
         const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clothing-ecommerce-h2wk.onrender.com";
         const res = await axios.get(`${baseURL}/products`);
         setProducts(res.data.products);
