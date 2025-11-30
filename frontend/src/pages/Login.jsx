@@ -7,11 +7,13 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const API = import.meta.env.VITE_API_URL;
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${API}/api/auth/login`, {
         email,
         password,
       });
@@ -21,10 +23,11 @@ export default function Login() {
 
       // Merge guest cart
       const guestCart = JSON.parse(localStorage.getItem("guestCart") || "[]");
+
       if (guestCart.length > 0) {
         for (let item of guestCart) {
           await axios.post(
-            "http://localhost:5000/api/cart",
+            `${API}/api/cart`,
             {
               productId: item.product,
               size: item.size,
@@ -33,7 +36,7 @@ export default function Login() {
             { headers: { Authorization: `Bearer ${token}` } }
           );
         }
-        localStorage.removeItem("guestCart"); // clear guest cart
+        localStorage.removeItem("guestCart");
       }
 
       navigate("/"); // redirect to home
@@ -44,9 +47,9 @@ export default function Login() {
   };
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div className="auth-container">
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="auth-form">
         <input
           type="email"
           placeholder="Email"
@@ -54,7 +57,7 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        <br />
+
         <input
           type="password"
           placeholder="Password"
@@ -62,7 +65,7 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <br />
+
         <button type="submit">Login</button>
       </form>
     </div>
