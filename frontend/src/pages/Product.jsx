@@ -9,9 +9,7 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/products`
-        );
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`);
         setProducts(res.data.products);
       } catch (err) {
         console.error("❌ Failed to load products:", err);
