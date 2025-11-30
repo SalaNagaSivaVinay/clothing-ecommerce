@@ -1,0 +1,222 @@
+/* ================= Global Styles ================= */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  --primary-color: #333;
+  --secondary-color: #007bff;
+  --text-color: #222;
+  --bg-color: #f4f4f4;
+  --card-bg: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ================= Navbar ================= */
+nav {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+}
+
+nav a {
+  color: #fff;
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ================= Headings ================= */
+h1, h2, h3, h4 {
+  color: var(--text-color);
+}
+
+h2 {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+/* ================= Buttons ================= */
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ================= Inputs & Selects ================= */
+input, select {
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* ================= Product / Cart Cards ================= */
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card h4 {
+  margin: 5px 0;
+}
+
+.card p {
+  margin: 2px 0;
+}
+
+/* ================= Pagination ================= */
+.pagination button {
+  margin-right: 5px;
+  background-color: #fff;
+  color: var(--text-color);
+  border: 1px solid #ccc;
+}
+
+.pagination button.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* ================= Misc ================= */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* CENTER WEBSITE */
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* PREMIUM NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.nav-links a:hover {
+  color: #6c5ce7;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  margin-left: 18px;
+  padding: 6px 14px;
+  background: #ff7675;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #d63031;
+}
+
+/* PAGE CENTER FIX */
+.page-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Center all forms (Login/Register) */
+form {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Fix Products Grid Center */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Product card premium look */
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
