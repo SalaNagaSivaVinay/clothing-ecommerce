@@ -19,6 +19,7 @@ export default function Products() {
 }, []);
 
 
+
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h2 style={{ marginBottom: "20px" }}>Products</h2>
