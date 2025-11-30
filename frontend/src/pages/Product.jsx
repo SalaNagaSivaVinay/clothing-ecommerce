@@ -7,24 +7,24 @@ export default function Products() {
   const navigate = useNavigate();
 
   useEffect(() => {
-  const fetchProducts = async () => {
-    try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`);
-      setProducts(res.data.products);
-    } catch (err) {
-      console.error("❌ Failed to load products:", err);
-    }
-  };
-  fetchProducts();
-}, []);
+    const fetchProducts = async () => {
+      try {
+        // Use environment variable from Vercel
+        const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clothing-ecommerce-h2wk.onrender.com";
+        const res = await axios.get(`${baseURL}/products`);
+        setProducts(res.data.products);
+      } catch (err) {
+        console.error("❌ Failed to load products:", err);
+      }
+    };
 
-
+    fetchProducts();
+  }, []);
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h2 style={{ marginBottom: "20px" }}>Products</h2>
 
-      {/* PRODUCT GRID */}
       <div
         style={{
           display: "grid",
@@ -60,20 +60,11 @@ export default function Products() {
                 background: "#f9f9f9"
               }}
             />
-
             <h4 style={{ margin: "10px 0" }}>{p.name}</h4>
-
             <p style={{ fontSize: "14px", color: "#666" }}>
               {p.description?.slice(0, 40)}...
             </p>
-
-            <p
-              style={{
-                fontWeight: "bold",
-                marginTop: "8px",
-                fontSize: "16px"
-              }}
-            >
+            <p style={{ fontWeight: "bold", marginTop: "8px", fontSize: "16px" }}>
               ₹{p.price}
             </p>
           </div>
