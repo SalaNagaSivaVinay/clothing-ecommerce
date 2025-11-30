@@ -1,16 +1,118 @@
-# React + Vite
+🛍️ Clothing E-Commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-Stack MERN Assignment
+Author: Sala Naga Siva Vinay
 
-Currently, two official plugins are available:
+📌 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a fully functional Clothing E-Commerce Application built using:
 
-## React Compiler
+Frontend: React.js (Vite)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Backend: Node.js + Express.js
 
-## Expanding the ESLint configuration
+Database: MongoDB
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Authentication: JWT (JSON Web Token)
+
+The project includes:
+
+✔ Product Listing
+✔ Product Details Page
+✔ Add to Cart
+✔ Order Button
+✔ Login & Register
+✔ Fully responsive layout
+✔ Filters (category, size, search, price range)
+✔ Backend APIs for products, users, and auth
+
+🛠️ Tech Stack
+Frontend
+
+React.js (Vite)
+Axios
+React Router
+CSS Flex & Grid
+Context API / LocalStorage
+
+Backend
+
+Node.js
+Express.js
+MongoDB + Mongoose
+JWT Authentication
+CORS Enabled
+
+📦 Installation and Setup
+1️⃣ Clone the repository
+git clone https://github.com/SalaNagaSivaVinay/clothing-ecommerce.git
+
+2️⃣ Install backend dependencies
+cd backend
+npm install
+
+3️⃣ Install frontend dependencies
+cd ../frontend
+npm install
+
+🔑 Environment Variables
+Backend .env
+MONGO_URI=your_mongodb_url
+JWT_SECRET=your_secret_key
+
+Frontend .env
+VITE_API_URL=http://localhost:5000/api
+
+▶️ Running the Project
+Start backend
+cd backend
+npm start
+
+Start frontend
+cd frontend
+npm run dev
+
+📡 API Endpoints
+Products
+GET /api/products
+GET /api/products/:id
+
+Auth
+POST /api/auth/register
+POST /api/auth/login
+
+✨ Features Implemented
+
+🛒 Product Module
+
+List all products
+Product search
+Category filter
+Size filter
+Price filter
+Product detail page
+
+👤 Authentication
+
+Register new user
+Login user
+JWT-based secure routes
+
+🧺 User Interactions
+
+Add to Cart
+Place Order
+
+🎨 UI Improvements
+
+Full card clickable navigation
+Centered layout
+Responsive design
+Clean product grid spacing
+
+📌 Final Notes
+
+This project was created as part of an assignment.
+All features work both locally and after deployment.
+
+If you face any errors, feel free to reach out.
