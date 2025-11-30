@@ -7,16 +7,17 @@ export default function Products() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`);
-        setProducts(res.data.products);
-      } catch (err) {
-        console.error("❌ Failed to load products:", err);
-      }
-    };
-    fetchProducts();
-  }, []);
+  const fetchProducts = async () => {
+    try {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/products`);
+      setProducts(res.data.products);
+    } catch (err) {
+      console.error("❌ Failed to load products:", err);
+    }
+  };
+  fetchProducts();
+}, []);
+
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
